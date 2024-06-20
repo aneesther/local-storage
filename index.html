@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <form onsubmit="myfunc(event)">
+        <div>
+            <label> Full Name </label>,
+            <input type="text" placeholder="name" id="full_name" required/>
+        </div> <br/>
+
+        <div>
+            <label> Gender </label>,
+            <input type="radio"  name="gender" id="gender"  placeholder="gender"/> Male
+            <input type="radio"  name="gender" placeholder="gender"/> Female
+        </div><br/>
+
+        <div>
+            <label> Date of Birth </label>,
+            <input type="date"  name="gender" id="date_of_birth" placeholder="gender"/> 
+        </div><br/>
+
+        <div>
+            <label>Email Id </label>,
+            <input type="email" placeholder="name" id="email_id" required/>
+        </div> <br/>
+
+        <input type="submit" value="submit"/>
+    </form>
+    <script type="text/javascript">
+        function myfunc(event) {
+    event.preventDefault();
+
+    var full_name = document.getElementById("full_name").value;
+    var temp_gender = document.getElementById("gender").value;
+    var date_of_birth = document.getElementById("date_of_birth").value;
+    var email_id = document.getElementById("email_id").value;
+
+    temp_gender.checked ? gender ="male" : gender = "female";
+    
+    localStorage.setItem("Is_full_name", full_name);
+    localStorage.setItem("Is_gender", gender);
+    localStorage.setItem("Is_date_of_birth", date_of_birth);
+    localStorage.setItem("Is_email_id", email_id);
+}
+    
+    </script> 
+</body>
+</html>
